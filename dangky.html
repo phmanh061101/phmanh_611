@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản</title>
+    <link rel="stylesheet" href="./Boostrap/css/bootstrap.min.css">
+    <script src="./Boostrap/js/jquery.min.js"></script>
+    <script src="./Boostrap/js/bootstrap.min.js"></script>
+    <style>
+        .container {
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+    
+
+        $(document).ready(function(e) 
+        {
+            $("#myBtn").click(function() {
+        $("#myModal").modal();
+    });
+    var i = 1;    
+    function KiemTraName() {
+        var re = /^[A-Z][a-z]+(\s[A-Z][a-z]+)+$/;
+        if ($("#txtTen").val() == "") {
+            $("#tbTen").html("Khong duoc bo trong");
+            return false;
+        }
+        if (!re.test($("#txtTen").val())) {
+            $("#tbTen").html("Ky tu dau viet hoa");
+            return false;
+        }
+        $("#tbTen").html("*");
+        return true;
+    }
+    $("#txtTen").blur(KiemTraName);
+        }
+    
+  
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Đăng Ký Tài Khoản</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-right">
+                <p>Tên Đăng Nhập: </p>
+            </div>
+            <div class="col-7">
+                <input type="text" class="form-control" id="txtTen" onblur="ktTen()" ; placeholder="Tên Đăng Nhập ">
+            </div>
+            <div class="col-1 ">
+                <span class="text-danger " id="er1 ">(*)</span>
+            </div>
+        </div>
+        <div class="row mt-3 ">
+            <div class="col-4 text-right ">
+                <p>Password: </p>
+            </div>
+            <div class="col-7 ">
+                <input type="password " class=" form-control " id="mk " placeholder="Nhập vào mật khẩu ">
+            </div>
+            <div class="col-1 ">
+                <span class="text-danger ">(*)</span>
+            </div>
+        </div>
+        <div class="row mt-3 ">
+            <div class="col-4 text-right ">
+                <p>Nhập lại mật khẩu: </p>
+            </div>
+            <div class="col-7 ">
+                <input type="password " class=" form-control " id="mk " placeholder="Nhập lại mật khẩu ">
+            </div>
+            <div class="col-1 ">
+                <span class="text-danger ">(*)</span>
+            </div>
+        </div>
+        <div class="row mt-3 ">
+            <div class="col-12 text-center ">
+                <h1>Thông tin cá nhân</h1>
+            </div>
+        </div>
+        <div class="row mt-3 ">
+            <div class="col-4 text-right ">
+                <p>Họ và tên: </p>
+            </div>
+            <div class="col-7 ">
+                <input type="text " class=" form-control " id="txtHoTen " placeholder="Nhập vào họ tên(bắt buộc nhập) ">
+            </div>
+            <div class="col-1 ">
+                <span class="text-danger ">(*)</span>
+            </div>
+        </div>
+        <div class="row mt-3 ">
+            <div class="col-4 text-right ">
+                <p>Ngày sinh: </p>
+            </div>
+            <div class="col-7 ">
+                <input type="date" class=" form-control " id="txtNgay " placeholder="mm/dd/yy">
+            </div>
+        </div>
+        <div class="row mt-3 ">
+            <div class="col-4 text-right ">
+                <p>Giới tính: </p>
+            </div>
+            <div class="col-7" style="font-size: 20px;">
+                <div class="form-check-inline">
+                    <label><input type="radio"> Nam</label>
+                </div>
+                <div class="form-check-inline">
+                    <label><input type="radio"> Nữ</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-3 ">
+            <div class="col-4 text-right ">
+                <p>Địa chỉ: </p>
+            </div>
+            <div class="col-7 ">
+                <input type="text" class=" form-control " id="txtadd " placeholder="Nhập vào địa chỉ">
+            </div>
+
+        </div>
+        <div class="row mt-3 ">
+            <div class="col-4 text-right ">
+                <p>Điện thoại: </p>
+            </div>
+            <div class="col-7 ">
+                <input type="tel" class=" form-control " id="txtTel " placeholder="Nhập vào số điện thoại(9 đến 10 số)">
+            </div>
+
+        </div>
+        <div class="row mt-3 ">
+            <div class="col-4 text-right ">
+                <p>Email: </p>
+            </div>
+            <div class="col-7 ">
+                <input type="email" class=" form-control " id="txtMail " placeholder="Nhập vào địa chỉ email của bạn">
+            </div>
+
+        </div>
+        <div class="row mt-2">
+            <div class="col-6 text-right">
+                <button type="submit" class="btn btn-danger">Đăng ký</button>
+            </div>
+            <div class="col-6 text-left">
+                <a href="../De_Tai_Lon/form_dang_nhap.html">
+                    <button type="submit" class="btn btn-warning">Đã có tài khoản</button>
+                </a>
+            </div>
+
+        </div>
+</body>
+
+</html>

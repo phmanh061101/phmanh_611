@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../De_Tai_Lon/Boostrap/css/bootstrap.min.css">
+    <script src="../De_Tai_Lon/Boostrap/js/bootstrap.min.js"></script>
+    <script src="../De_Tai_Lon/Boostrap/js/jquery.min.js"></script>
+    <script src="../De_Tai_Lon/Boostrap/js/popper.min.js"></script>
+    <style>
+        #er1,
+        #er2,
+        #er3 {
+            color: red;
+            font-style: italic;
+        }
+        
+        #txtten {
+            margin-left: 27px;
+        }
+    </style>
+    <script>
+        function ktraten() {
+            var regt = /^[A-Z]+[A-Za-z]*(\s*[A-Z]+[A-Za-z]*)$/;
+            var t = document.getElementById("txtten").value;
+            if (regt.test(t)) {
+                document.getElementById("er1").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("er1").innerHTML = "Ten sai";
+                return false;
+            }
+        }
+
+        function ktrans() {
+            var ns = document.getElementById("txtns").value;
+            ns = new Date(ns);
+            var crr = new Date();
+            var t = crr.getFullYear() - ns.getFullYear();
+            if (t >= 16) {
+                document.getElementById("er2").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("er2").innerHTML = "Tuoi khong hop le";
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>DANG KY TAI KHOAN</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-right">
+                <p>Ten Dang Nhap:</p>
+            </div>
+            <div class="col-7">
+                <input type="text" class="formcontrol" id="txtTen" placeholder="Ten Dang Nhap" onblur="ktraten();">
+            </div>
+            <div class="col-1">
+                <span class="text-danger" id="er1">*</span>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-4 text-right">
+                <p>Nam sinh:</p>
+            </div>
+            <div class="col-7 ">
+                <input type="date" class="formcontrol" id="txtns" placeholder="Nhap ns">
+            </div>
+            <div class="col-1">
+                <span class="text-danger" id="er1">*</span>
+            </div>
+        </div>
+    </div>
+</body>
